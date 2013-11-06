@@ -26,7 +26,7 @@ html lang="en"
 
   head
     meta charset="utf-8"
-    title = title('FIXME: PAGE TITLE')
+    title = title('Resume of James LaCroix')
 
     / general meta
     meta name="description" content="FIXME: APPLICATION DESCRIPTION"
@@ -51,4 +51,6 @@ html lang="en"
     = partial 'layouts/analytics'
 
   body
+    = partial 'layouts/header'
     = content_for?(:content) ? yield(:content) : yield
+    = partial 'layouts/footer'
