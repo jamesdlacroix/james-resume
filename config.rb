@@ -39,18 +39,18 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
+activate :asset_hash, :ignore => [%r{^fonts/89305}]
 
 # Build-specific configuration
 configure :build do
   # activate :sprockets
 
   # For example, change the Compass output style for deployment
-  activate :minify_css
+  activate :minify_css, :ignore => [%r{fonts}]
 
   # Minify Javascript on build
   activate :minify_javascript
 
-  activate :asset_hash
   activate :gzip
 
   # TODO necessary?
