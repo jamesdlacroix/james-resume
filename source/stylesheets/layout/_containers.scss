@@ -6,6 +6,10 @@
   padding-left: $page-gutter;
 }
 
+.l-section {
+  @include row;
+}
+
 .l-main {
   @include media-ie($breakpoint-ipad) {
     @include span-columns(8);
