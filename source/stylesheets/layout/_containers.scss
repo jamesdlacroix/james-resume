@@ -30,7 +30,7 @@
 
   .l-leadership {
     @include span-columns(6);
-    @include nth-omega(2n);
+    @include omega(2n);
   }
 
 } // @mixin ipad-layout
