@@ -12,7 +12,7 @@ xml.instruct!
 # page "/sitemap.xml", :layout => false
 #
 # To tell Google and other search services about the sitemap, add
-# Sitemap: http://www.lacroixdesign.net/sitemap.xml
+# Sitemap: http://DOMAIN.TLD/sitemap.xml
 # to the robots.txt file. Or see
 # http://support.google.com/webmasters/bin/answer.py?hl=en&answer=183669&topic=8476&ctx=topic for other options.
 #
@@ -20,7 +20,6 @@ xml.instruct!
 # http://www.sitemaps.org/protocol.html
 # http://support.google.com/webmasters/bin/answer.py?hl=en&answer=156184&topic=8476&ctx=topic
 #
-# Remember to exchange www.lacroixdesign.net for your domain (line 64)
 # and to set an apropriate update frequency for your site (line 84)
 
 xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
@@ -65,7 +64,10 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
 
       # Build xml of sitemap
       xml.url do
-        xml.loc 'http://www.lacroixdesign.net' + page.url   # TODO: possibly remove .html
+        unless data.site.host
+          raise "Site host is missing: add a `host` field in `data/site.yml`"
+        end
+        xml.loc data.site.host + page.url
 
         # As usual, it's hard to get any solid information on how the search engines are
         # using the information in the site map. lastmod (last modified) and changefreq
