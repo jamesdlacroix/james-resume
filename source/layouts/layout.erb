@@ -36,7 +36,7 @@
   <% end %>
 
   <meta property="og:title" content="<%= data.site.title %>">
-  <meta property="og:image" content="<%= image_path("facebook-meta-image.png") %>">
+  <meta property="og:image" content="<%= data.site.host + image_path("facebook-meta-image.png") %>">
   <meta property="og:url" content="<%= data.site.host + current_page.url %>">
   <meta property="og:description" content="<%= current_page.data.description || data.site.description %>">
   <meta property="og:site_name" content="<%= data.site.title %>">
